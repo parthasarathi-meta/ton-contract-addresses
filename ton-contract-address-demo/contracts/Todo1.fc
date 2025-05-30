@@ -1,0 +1,16 @@
+import "@stdlib/deploy";
+
+contract Todo1 with Deployable {
+    seqno: Int as uint64 = 1;
+
+    init() {}
+
+    get fun myAddress(): Address {
+        return myAddress();
+    }
+
+    get fun otherAddress(): Address {
+        let init: StateInit = initOf Todo2();
+        return contractAddress(init);
+    }
+}
